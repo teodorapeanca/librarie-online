@@ -1,0 +1,20 @@
+﻿@model IEnumerable<LibrarieOnline.Models.Order>
+
+<h1>Coșul meu</h1>
+
+@foreach (var order in Model)
+{
+    <div style="border:1px solid gray; padding:10px; margin-bottom:10px;">
+        <p><b>Data:</b> @order.OrderDate.ToString("dd.MM.yyyy HH:mm")</p>
+        <p><b>Total:</b> @order.TotalAmount RON</p>
+
+        <ul>
+            @foreach (var item in order.OrderItems)
+            {
+                <li>
+                    @item.Book?.Title - @item.Quantity x @item.UnitPrice
+                </li>
+            }
+        </ul>
+    </div>
+}

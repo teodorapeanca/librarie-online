@@ -1,0 +1,62 @@
+﻿@model LibrarieOnline.Models.Book
+
+@{
+    ViewData["Title"] = "Detalii carte";
+}
+
+<h1>Detalii carte</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            Titlu
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt class="col-sm-2">
+            Preț
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt class="col-sm-2">
+            Autor
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            Naționalitate
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.Nationality)
+        </dd>
+
+        <dt class="col-sm-2">
+            Categorie
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            Editură
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publisher.Name)
+        </dd>
+
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.BookId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
